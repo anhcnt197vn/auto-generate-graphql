@@ -1,0 +1,13 @@
+query lessons {
+  lessons {
+    endDate
+    id
+    name
+    startDate
+    students {
+      firstName
+      id
+      lastName
+    }
+  }
+}

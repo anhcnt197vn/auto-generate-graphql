@@ -1,0 +1,43 @@
+input AssignStudentInput {
+  lessonId: ID!
+  studentIds: [ID!]!
+}
+
+input CreateLessonInput {
+  endDate: String!
+  name: String!
+  startDate: String!
+  students: [ID!] = []
+}
+
+input CreateStudentInput {
+  firstName: String!
+  lastName: String!
+}
+
+type Lesson {
+  endDate: String!
+  id: ID!
+  name: String!
+  startDate: String!
+  students: [Student!]!
+}
+
+type Mutation {
+  assignStudentToLesson(assignStudentInput: AssignStudentInput!): Lesson!
+  createLesson(createLessonInput: CreateLessonInput!): Lesson!
+  createStudent(createStudentInput: CreateStudentInput!): Student!
+}
+
+type Query {
+  lesson(id: String!): Lesson!
+  lessons: [Lesson!]!
+  student(id: String!): Student!
+  students: [Student!]!
+}
+
+type Student {
+  firstName: String!
+  id: String!
+  lastName: String!
+}

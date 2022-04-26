@@ -1,0 +1,15 @@
+overwrite: true
+schema:
+  - http://localhost:8089/graphql
+generates:
+  schema/schema.json:
+    plugins:
+      - introspection
+    config:
+      minify: false
+  schema/schema.graphql:
+    plugins:
+      - schema-ast
+hooks:
+  afterOneFileWrite:
+    - prettier --write

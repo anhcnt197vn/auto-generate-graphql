@@ -1,0 +1,13 @@
+mutation assignStudentToLesson($assignStudentInput: AssignStudentInput!) {
+  assignStudentToLesson(assignStudentInput: $assignStudentInput) {
+    endDate
+    id
+    name
+    startDate
+    students {
+      firstName
+      id
+      lastName
+    }
+  }
+}

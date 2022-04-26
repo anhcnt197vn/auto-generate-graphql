@@ -1,0 +1,13 @@
+mutation createLesson($createLessonInput: CreateLessonInput!){
+    createLesson(createLessonInput: $createLessonInput){
+        endDate
+        id
+        name
+        startDate
+        students{
+            firstName
+            id
+            lastName
+        }
+    }
+}
